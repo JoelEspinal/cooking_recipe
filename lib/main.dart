@@ -12,6 +12,19 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.pink,
         accentColor: Colors.amber,
         canvasColor: Color.fromRGBO(255, 254, 224, 1),
+        fontFamily: 'Releway',
+        textTheme: ThemeData.light().textTheme.copyWith(
+              body1: TextStyle(
+                color: Color.fromRGBO(20, 51, 52, 1),
+              ),
+              body2: TextStyle(
+                color: Color.fromRGBO(20, 51, 52, 1),
+              ),
+              title: TextStyle(
+                fontSize: 24,
+                fontFamily: 'RobotoCondensed',
+              ),
+            ),
       ),
       home: CategoriesScreen(),
     );
