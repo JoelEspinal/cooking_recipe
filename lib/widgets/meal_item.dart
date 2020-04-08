@@ -16,7 +16,14 @@ class MealItem extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Stack(
-              children: <Widget>[],
+              children: <Widget>[
+                ClipRRect(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(15),
+                    topRight: Radius.circular(15),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
