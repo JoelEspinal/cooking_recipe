@@ -23,7 +23,7 @@ class MealItem extends StatelessWidget {
   String get complexityText {
     switch (complexity) {
       case Complexity.Simple:
-        return 'Simple';  
+        return 'Simple';
         break;
       case Complexity.Challenging:
         return 'Challenging';
@@ -53,7 +53,7 @@ class MealItem extends StatelessWidget {
   }
 
   void selectMeal(BuildContext context) {
-    Navigator.of(context).pushNamed(MealDetailScreen.routeName, arguments: );
+    Navigator.of(context).pushNamed(MealDetailScreen.routeName, arguments: id);
   }
 
   @override
