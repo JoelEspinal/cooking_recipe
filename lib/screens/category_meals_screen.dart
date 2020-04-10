@@ -16,7 +16,7 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
   List<Meal> displayedMeals;
 
   @override
-  void initState() {
+  void didChangeDependencies() {
     final routeArgs =
         ModalRoute.of(context).settings.arguments as Map<String, String>;
     categoryTitle = routeArgs['title'];
@@ -24,7 +24,7 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
     displayedMeals = DUMMY_MEALS.where((meal) {
       return meal.categories.contains(categoryId);
     }).toList();
-    super.initState();
+    super.didChangeDependencies();
   }
 
   void _removeMeal(String mealId) {
@@ -49,6 +49,7 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
             affordability: displayedMeals[index].affordability,
             complexity: displayedMeals[index].complexity,
             duration: displayedMeals[index].duration,
+            removeItem: _removeMeal,
           );
         },
       ),
