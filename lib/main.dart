@@ -13,7 +13,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Map<String, bool> filters = {
+  Map<String, bool> _filters = {
     'gluten': false,
     'lactose': false,
     'vegan': false,
@@ -22,7 +22,7 @@ class _MyAppState extends State<MyApp> {
 
   void _setFilters(Map<String, bool> filterData) {
     setState(() {
-      this.filters = filterData;
+      _filters = filterData;
     });
   }
 
