@@ -20,7 +20,11 @@ class _MyAppState extends State<MyApp> {
     'vegetarian': false,
   };
 
-  void _setFilters(Map<String, bool> filterData) {}
+  void _setFilters(Map<String, bool> filterData) {
+    setState(() {
+      this.filters = filterData;
+    });
+  }
 
   Widget build(BuildContext context) {
     return MaterialApp(
