@@ -4,6 +4,10 @@ import 'package:flutter/material.dart';
 class FiltersScreen extends StatefulWidget {
   static const routeName = '/filters';
 
+  final Function saveFilters;
+
+  FiltersScreen(this.saveFilters);
+
   @override
   _FiltersScreenState createState() => _FiltersScreenState();
 }
@@ -29,6 +33,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Your Fiters'),
+        actions: <Widget>[IconButton(icon: Icon(Icons.save), onPressed: null)],
       ),
       drawer: MainDrawer(),
       body: Column(
