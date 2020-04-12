@@ -14,6 +14,16 @@ class _FiltersScreenState extends State<FiltersScreen> {
   bool _vegan = false;
   bool _lactoseFree = false;
 
+  Widget _buildSwitchListTile(String title, String description,
+      bool currentValue, Function updateValue) {
+    return SwitchListTile(
+      title: Text(title),
+      subtitle: Text(description),
+      value: currentValue,
+      onChanged: updateValue,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,16 +43,34 @@ class _FiltersScreenState extends State<FiltersScreen> {
           Expanded(
             child: ListView(
               children: <Widget>[
-                SwitchListTile(
-                  title: Text('Gluten-free'),
-                  subtitle: Text('Only include gluten-free meals.'),
-                  value: _glutenFree,
-                  onChanged: (newValue) {
-                    setState(() {
-                      _glutenFree = newValue;
-                    });
-                  },
-                ),
+                _buildSwitchListTile('Gluten-free',
+                    'Only include gluten-free meals', _glutenFree, (newValue) {
+                  setState(() {
+                    _glutenFree = newValue;
+                  });
+                }),
+                _buildSwitchListTile(
+                    'lactose-free',
+                    'Only include lactose-free meals',
+                    _lactoseFree, (newValue) {
+                  setState(() {
+                    _lactoseFree = newValue;
+                  });
+                }),
+                _buildSwitchListTile(
+                    'Vegetarian',
+                    'Only include vegetarian-free meals',
+                    _veterian, (newValue) {
+                  setState(() {
+                    _veterian = newValue;
+                  });
+                }),
+                _buildSwitchListTile(
+                    'Vegan', 'Only include vegan meals', _vegan, (newValue) {
+                  setState(() {
+                    _vegan = newValue;
+                  });
+                }),
               ],
             ),
           ),
