@@ -36,7 +36,15 @@ class _FiltersScreenState extends State<FiltersScreen> {
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.save),
-            onPressed: widget.saveFilters,
+            onPressed: () {
+              final selectedfilters = {
+                'gluten': _glutenFree,
+                'lactose': _lactoseFree,
+                'vegan': _veterian,
+                'vegetarian': false,
+              };
+              widget.saveFilters(selectedfilters);
+            },
           )
         ],
       ),
