@@ -25,6 +25,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
     _veterian = widget.currentFilters['lactose'];
     _vegan = widget.currentFilters['vegetarian'];
     _lactoseFree = widget.currentFilters['vegan'];
+    super.initState();
   }
 
   Widget _buildSwitchListTile(String title, String description,
